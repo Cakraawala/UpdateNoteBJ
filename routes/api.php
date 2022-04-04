@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\UpdateInfoController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -14,6 +15,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
+// Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
+//     return $request->user();
+// });
+
+Route::controller(UpdateInfoController::class)->group(function(){
+    Route::get('/update', 'index'); //udh
+    Route::post('/update', 'store'); //blm
+    Route::get('/update?recent', 'getrecentup'); //udh
+    Route::get('/update/{id}', 'getupdate'); //test
+    Route::delete('/update/{id}', 'destroy'); //udh
 });
+
