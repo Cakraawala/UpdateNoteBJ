@@ -12,7 +12,7 @@ class Update extends Model
     protected $table = 'update';
 
     public function features(){
-        return $this->hasMany(Features::class, 'features_id');
+        return $this->hasMany(Features::class, 'note_id','id');
     }
 
 }

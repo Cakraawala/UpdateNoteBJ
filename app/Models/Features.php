@@ -12,6 +12,6 @@ class Features extends Model
     protected $table = 'features';
 
     public function updates(){
-        return $this->belongsTo(Update::class, 'update_id')->where('update_id', 0);
+        return $this->belongsTo(Update::class, 'note_id', 'id')->where('update_id', 0);
     }
 }
